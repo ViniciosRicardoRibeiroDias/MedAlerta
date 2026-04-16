@@ -79,10 +79,10 @@ CREATE TABLE Cuidador (
     enderecoEstado CHAR(2) NOT NULL,
     PRIMARY KEY (idCuidador),
     CONSTRAINT fk_Usuario
-        FOREIGN KEY (idUsuario)
-        REFERENCES Usuario (idUsuario)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE
+    FOREIGN KEY (idUsuario)
+    REFERENCES Usuario (idUsuario)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 insert into Usuario (nome, telefone, email, enderecoRua, enderecoNumero, enderecoComplemento, enderecoBairro, enderecoCEP, enderecoCidade, enderecoEstado) values
