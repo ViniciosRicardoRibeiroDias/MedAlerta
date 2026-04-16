@@ -3,17 +3,22 @@
 -- Exemplo simples de inserção de dados.
 -- Mostraremos 2 tabelas com 3 colunas cada e relacionadas entre si.
 USE medalerta;
-CREATE TABLE IF NOT EXISTS users (
-		id INT PRIMARY KEY AUTO_INCREMENT,
-		name VARCHAR(255),
-		email VARCHAR(255)
-);
-CREATE TABLE IF NOT EXISTS posts (
-		id INT PRIMARY KEY AUTO_INCREMENT,
-		title VARCHAR(255),
-		content TEXT,
-		user_id INT,
-		FOREIGN KEY (user_id) REFERENCES users(id)
-);
-INSERT IGNORE INTO users (name, email) VALUES ('Alice', 'alice@example.com');
-INSERT IGNORE INTO posts (title, content, user_id) VALUES ('Primeira Postagem', 'Conteúdo da primeira postagem.', 1);
+CREATE TABLE Terceiros(
+	idTerceiros INT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    enderecoRua VARCHAR(100) NOT NULL,
+    enderecoNumero INT NOT NULL,
+    enderecoComplemento VARCHAR(50),
+    enderecoBairro VARCHAR(50) NOT NULL,
+    enderecoCep VARCHAR(10) NOT NULL,
+    enderecoCidade VARCHAR(50) NOT NULL,
+    enderecoEstado CHAR(2) NOT NULL,
+    idUsuario INT NOT NULL,
+    PRIMARY KEY (idAcompanhante),
+    CONSTRAINT fk_Acompanhante_Usuario
+        FOREIGN KEY (idUsuario)
+        REFERENCES USUARIO (idUsuario)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
