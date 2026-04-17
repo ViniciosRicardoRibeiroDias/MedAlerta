@@ -9,10 +9,10 @@ public class Alerta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idAlerta")
-    private Long idAlerta;
+    private Integer idAlerta;
 
     @Column(name = "idHorarioMedicamento", nullable = false)
-    private Long idHorarioMedicamento;
+    private Integer idHorarioMedicamento;
 
     @Column(name = "tempoMinutos", nullable = false)
     private Integer tempoMinutos;
@@ -27,22 +27,22 @@ public class Alerta {
     public Alerta() {
     }
 
-    public Alerta(Long idHorarioMedicamento, Integer tempoMinutos, StatusAlerta statusAlerta, Boolean ativo) {
+    public Alerta(Integer idHorarioMedicamento, Integer tempoMinutos, StatusAlerta statusAlerta, Boolean ativo) {
         this.idHorarioMedicamento = idHorarioMedicamento;
         this.tempoMinutos = tempoMinutos;
         this.statusAlerta = statusAlerta;
         this.ativo = ativo;
     }
 
-    public Long getIdAlerta() {
+    public Integer getIdAlerta() {
         return idAlerta;
     }
 
-    public Long getIdHorarioMedicamento() {
+    public Integer getIdHorarioMedicamento() {
         return idHorarioMedicamento;
     }
 
-    public void setIdHorarioMedicamento(Long idHorarioMedicamento) {
+    public void setIdHorarioMedicamento(Integer idHorarioMedicamento) {
         this.idHorarioMedicamento = idHorarioMedicamento;
     }
 

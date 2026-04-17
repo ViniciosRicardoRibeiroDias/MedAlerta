@@ -38,7 +38,7 @@ public class Cuidador {
     @Column(nullable = false, length = 50)
     private String enderecoCidade;
 
-    @Column(nullable = false, length = 2)
+    @Column(nullable = false, length = 2, columnDefinition = "CHAR(2)")
     private String enderecoEstado;
 
     @OneToOne(optional = false, fetch = FetchType.LAZY)
