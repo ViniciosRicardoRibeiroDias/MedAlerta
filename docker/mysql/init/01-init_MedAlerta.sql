@@ -3,7 +3,6 @@ ALTER DATABASE medalerta
   COLLATE = utf8mb4_0900_ai_ci;
 
 use medalerta;
-
 create table Usuario (
 	idUsuario int auto_increment not null,
 	nome varchar(100) not null,
@@ -28,6 +27,16 @@ create table Medicamento (
     observacao varchar(200),
     primary key (idMedicamento)
 );
+
+/*create table HorarioMedicamento (
+	idHorarioMedicamento int auto_increment not null,
+	idUsuarioMedicamento int not null,
+	horario time not null,
+	frequenciaValor int not null,
+	frequenciaUnidade enum('horas', 'dias', 'semanas', 'meses') not null,
+	primary key (idHorarioMedicamento),
+	foreign key (idUsuarioMedicamento) references UsuarioMedicamento(idUsuarioMedicamento)
+);*/
 
 CREATE TABLE Prescricao (
     idPrescricao INT AUTO_INCREMENT NOT NULL,
