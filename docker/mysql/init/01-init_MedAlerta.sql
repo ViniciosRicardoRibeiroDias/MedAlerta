@@ -13,7 +13,7 @@ create table Usuario (
     enderecoNumero int,
     enderecoComplemento varchar(50),
     enderecoBairro varchar(50),
-    enderecoCEP varchar(10),
+    enderecoCep varchar(10),
     enderecoCidade varchar(50),
     enderecoEstado varchar(02),
     primary key (idUsuario)
