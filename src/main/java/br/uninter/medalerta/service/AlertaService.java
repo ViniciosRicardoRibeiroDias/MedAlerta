@@ -19,7 +19,7 @@ public class AlertaService {
     }
 
     // BUSCAR POR ID (já retorna direto)
-    public Alerta buscarPorId(Long id) {
+    public Alerta buscarPorId(Integer id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Alerta não encontrado"));
     }
@@ -29,7 +29,7 @@ public class AlertaService {
         return repository.save(alerta);
     }
 
-    public Alerta atualizar(Long id, Alerta novoAlerta) {
+    public Alerta atualizar(Integer id, Alerta novoAlerta) {
         Alerta existente = buscarPorId(id);
 
         existente.setIdHorarioMedicamento(novoAlerta.getIdHorarioMedicamento());
@@ -40,7 +40,7 @@ public class AlertaService {
         return repository.save(existente);
     }
 
-       public void deletar(Long id) {
+       public void deletar(Integer id) {
         Alerta alerta = buscarPorId(id);
         repository.delete(alerta);
     }
