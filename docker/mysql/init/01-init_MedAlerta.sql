@@ -8,7 +8,7 @@ create table Usuario (
 	idUsuario int auto_increment not null,
 	nome varchar(100) not null,
     telefone varchar(20) not null,
-    email varchar(100) not null,
+    email varchar(100) not null unique,
     enderecoRua varchar(100),
     enderecoNumero int,
     enderecoComplemento varchar(50),
@@ -72,7 +72,7 @@ CREATE TABLE EstoqueMedicamento (
 
 CREATE TABLE Cuidador (
     idCuidador INT NOT NULL AUTO_INCREMENT,
-    idUsuario INT NOT NULL,
+    idUsuario INT NOT NULL UNIQUE,
     nome VARCHAR(100) NOT NULL,
     telefone VARCHAR(20) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
